@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-webapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: python-http-app
+        image: python-http-app:1.0
+        imagePullPolicy: IfNotPresent
+        resources:
+        ports:
+        - containerPort: 5000
