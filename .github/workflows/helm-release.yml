@@ -20,4 +20,4 @@ jobs:
         uses: shellbear/helm-release-action@v0.1
         with:
           repo: s3://nath-helm-central-bucket/charts/
-          chart: ./python-app
+          chart: ./python-app/python-webapp
